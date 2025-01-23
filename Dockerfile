@@ -17,7 +17,5 @@ COPY --chown=worker:worker . /hello-python
 WORKDIR /hello-python
 
 # Installa le dipendenze Python (ad esempio, requirements.txt)
-RUN pip install -r requirements.txt
-
-# Comando per eseguire il file run.py
-CMD ["python", "run.py"]
+RUN pip install --upgrade pip
+RUN pip install --user -r requirements.txt
